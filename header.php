@@ -11,23 +11,24 @@
 <div id="branding">
 <div id="site-title">
 </div>
-<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+<div id="ticker">
+    <p>test</p>
+</div>
 </div>
 <div id="bottom-header-wrapper">
     <div id="greeting">
-        <p>GREETINGS, GUEST!</p>
+        <p id="nerds"></p>
     </div>
     <nav id="menu">
         <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
     </nav>
     <div id="current-date">
-        <p>TODAY IS <?php echo strtoupper(date('F j\, Y')); ?></p>
     </div>
 </div>
 <div id="site-title">
-<?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-<?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
+<?php if ( function_exists( 'the_custom_logo' ) ) {
+ the_custom_logo();
+} ?>
 </div>
 </header>
 <div id="container">

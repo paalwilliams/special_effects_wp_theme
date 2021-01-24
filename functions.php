@@ -6,6 +6,7 @@ add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form' ) );
+add_theme_support( 'custom-logo');
 global $content_width;
 if ( ! isset( $content_width ) ) { $content_width = 1920; }
 register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
@@ -114,3 +115,17 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+// Enqueue Theme JS w React Dependency
+add_action( 'wp_enqueue_scripts', 'my_enqueue_theme_js' );
+function my_enqueue_theme_js() {
+  wp_enqueue_script(
+    'my-theme-frontend',
+    get_stylesheet_directory_uri() . '/build/index.js',
+    ['wp-element'],
+    time(), // Change this to null for production
+    true
+  );
+}
+
+require_once(__DIR__ . '/special_effects/test.php');

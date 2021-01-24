@@ -1,0 +1,34 @@
+{
+  "name": "special_effects",
+  "version": "1.0.0",
+  "description": "=== BlankSlate ===",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paalwilliams/special_effects_wp_theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paalwilliams/special_effects_wp_theme/issues"
+  },
+  "homepage": "https://github.com/paalwilliams/special_effects_wp_theme#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^13.0.0"
+  },
+  "dependencies": {
+    "jsmarquee": "^1.0.4",
+    "react-ticker": "^1.2.2"
+  }
+}
