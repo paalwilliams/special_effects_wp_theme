@@ -28,7 +28,8 @@
     "@wordpress/scripts": "^13.0.0"
   },
   "dependencies": {
-    "jsmarquee": "^1.0.4",
+    "react-double-marquee": "^1.0.7",
+    "react-intersection-observer": "^8.31.0",
     "react-ticker": "^1.2.2"
   }
 }

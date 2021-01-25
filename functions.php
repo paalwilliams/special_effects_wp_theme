@@ -128,4 +128,16 @@ function my_enqueue_theme_js() {
   );
 }
 
+add_action('wp_enqueue_scripts', 'enqueue_ticker_js');
+
+function enqueue_ticker_js() {
+  wp_enqueue_script('ticker_js_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/webticker.min.js' );
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_script_js');
+
+function enqueue_script_js() {
+  wp_enqueue_script('script', get_stylesheet_directory_uri() . '/site_assets/js/script.js' );
+}
+
 require_once(__DIR__ . '/special_effects/test.php');

@@ -12,12 +12,14 @@
 <div id="site-title">
 </div>
 <div id="ticker">
-    <p>test</p>
+    <ul id="webTicker">
+        <li>Publishing for the New Age<img src="/wp-content/uploads/2021/01/sparkle_1x1.png">California, USA<img src="/wp-content/uploads/2021/01/sparkle_1x1.png"></li>
+    </ul>
 </div>
 </div>
 <div id="bottom-header-wrapper">
     <div id="greeting">
-        <p id="nerds"></p>
+        <p id="greeting-text"></p>
     </div>
     <nav id="menu">
         <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>

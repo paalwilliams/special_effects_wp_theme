@@ -1,9 +1,7 @@
 const { render, useState, Fragment } = wp.element;
-import Ticker from 'react-ticker'
-import Marquee from 'jsmarquee'
+import Ticker from 'react-ticker';
+import { useInView } from 'react-intersection-observer';
 
-(function($) {
-    $(document).ready(function(){
 const UserLocalDateTime = () => {
     const today = new Date();
     let d = today.getDate();
@@ -26,18 +24,7 @@ const UserLocalDateTime = () => {
     //     }
     //   }
 
-        console.log( "ready!" );
-
-    const mm = new Marquee({
-        element: '#ticker',
-        velocity: 1
-      })
-
-      mm.run();
-
-      const dateString = `Today is ${week[dw]}, ${months[m]} ${d} ${y}`.toUpperCase();
-
-      $('#webTicker').webTicker();
+      const dateString = `Today is ${months[m]} ${d}, ${y}`.toUpperCase();
 
     return (
         <Fragment>
@@ -56,19 +43,4 @@ const Greeting = () => {
     )
 }
 
-render(<Greeting />, document.getElementById('nerds'))
-
-const TickerTape = () => {
-    return (
-        <Ticker speed="2">
-        {() => (
-            <>
-                <h1><span></span>Publishing for the New Age : California, USA<span></span></h1>
-            </>
-        )}
-    </Ticker>
-    )
-}
-
-})
-}(jQuery));
+render(<Greeting />, document.getElementById('greeting-text'))
