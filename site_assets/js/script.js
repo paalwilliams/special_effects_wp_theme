@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
 
+    let ticker = $('webTicker').clone();
+
     $('#webTicker').webTicker({    height:'75px', 
     duplicate: true, 
     rssfrequency: 0, 
@@ -10,4 +12,4 @@ jQuery(document).ready(function($){
     })
 
 });
-    
+     
