@@ -7,6 +7,7 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form' ) );
 add_theme_support( 'custom-logo');
+add_theme_supporT( 'woocommerce' );
 global $content_width;
 if ( ! isset( $content_width ) ) { $content_width = 1920; }
 register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
@@ -128,16 +129,4 @@ function my_enqueue_theme_js() {
   );
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_ticker_js');
-
-function enqueue_ticker_js() {
-  wp_enqueue_script('ticker_js_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/webticker.min.js' );
-}
-
-add_action('wp_enqueue_scripts', 'enqueue_script_js');
-
-function enqueue_script_js() {
-  wp_enqueue_script('script', get_stylesheet_directory_uri() . '/site_assets/js/script.js' );
-}
-
-require_once(__DIR__ . '/special_effects/test.php');
+require_once(__DIR__ . '/site_assets/sfx.php');

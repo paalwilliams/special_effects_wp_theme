@@ -1,0 +1,48 @@
+/* WooCommerce Styles */
+div#primary {
+	width: 80%;
+    margin: 0 auto;
+
+        /* Product Archive Page */
+        ul.products li.product img {
+            border: 2px solid white;
+    }
+    
+    div.prod-info-wrap {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        flex-shrink: 0;
+        flex-direction: column;
+        border: 2px solid white;
+        padding: 10px 0;
+    }
+    
+    div.prod-info-wrap * {
+        color: white;
+        font-family: 'Suisse'
+    }
+    
+    div.prod-info-wrap h2 {
+        font-size: 2rem !important;
+        text-align: center;
+    }
+    
+    div.prod-info-wrap a {
+        font-size: 1.6rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10%;
+    }
+    
+    h2.woocommerce-loop-product__title {
+        font-size: 2rem !important;
+        text-align: center;
+        font-family: 'Editorial New Ultralight';
+    }
+}
+
+
+
+

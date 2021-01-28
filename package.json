@@ -12,7 +12,8 @@
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "start": "wp-scripts start",
     "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
+    "test:unit": "wp-scripts test-unit-js",
+    "sass": "sass --watch ./site_assets/sass/main.scss style.css --style compressed"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,7 @@
     "@wordpress/scripts": "^13.0.0"
   },
   "dependencies": {
-    "react-double-marquee": "^1.0.7",
-    "react-intersection-observer": "^8.31.0",
-    "react-ticker": "^1.2.2"
+    "jquery": "^3.5.1",
+    "sass": "^1.32.5"
   }
 }

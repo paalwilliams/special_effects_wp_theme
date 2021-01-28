@@ -1,6 +1,6 @@
 const { render, useState, Fragment } = wp.element;
-import Ticker from 'react-ticker';
-import { useInView } from 'react-intersection-observer';
+import $ from 'jquery';
+
 
 const UserLocalDateTime = () => {
     const today = new Date();
@@ -32,6 +32,25 @@ const UserLocalDateTime = () => {
         </Fragment>
     )
 }
+
+$('#webTicker').webTicker({
+        height:'75px', 
+        duplicate: true, 
+        rssfrequency: 0, 
+        startEmpty: false, 
+        hoverpause: false, 
+        speed: 20,
+        height: '50px'
+    })
+
+$(window).resize(() => {
+    $('#webTicker').webTicker('stop')
+    clearTimeout(window.resizedFinished);
+    window.resizedFinished = setTimeout(function(){
+        $('#webTicker').webTicker('cont')
+    }, 250);
+});
+
 
 render(<UserLocalDateTime />, document.getElementById('current-date'))
 
