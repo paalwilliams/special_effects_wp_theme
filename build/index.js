@@ -142,43 +142,57 @@ var UserLocalDateTime = function UserLocalDateTime() {
   var m = today.getMonth();
   var y = today.getFullYear();
   var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; // Append st/nd/rd/th to day of month
-  // const nth = function(d) {
-  //     if (d > 3 && d < 21) return 'th';
-  //     switch (d % 10) {
-  //       case 1:  return "st";
-  //       case 2:  return "nd";
-  //       case 3:  return "rd";
-  //       default: return "th";
-  //     }
-  //   }
-
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var dateString = "Today is ".concat(months[m], " ").concat(d, ", ").concat(y).toUpperCase();
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, dateString));
-};
+}; // render userlocaldatetime component to header
 
-jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
-  height: '75px',
-  duplicate: true,
-  rssfrequency: 0,
-  startEmpty: false,
-  hoverpause: false,
-  speed: 20
-}, "height", '50px'));
-jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).resize(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker('stop');
-  clearTimeout(window.resizedFinished);
-  window.resizedFinished = setTimeout(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker('cont');
-  }, 250);
-});
-render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(UserLocalDateTime, null), document.getElementById('current-date'));
+
+if (document.getElementById('current-date')) {
+  render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(UserLocalDateTime, null), document.getElementById('current-date'));
+} // create webticker instance on page load
+
+
+if (document.getElementById('ticker')) {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
+    height: '75px',
+    duplicate: true,
+    rssfrequency: 0,
+    startEmpty: false,
+    hoverpause: false,
+    speed: 20
+  }, "height", '50px'));
+} //watch for window resize
+
+
+if (document.getElementById('ticker')) {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).resize(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker('stop');
+    clearTimeout(window.resizedFinished);
+    window.resizedFinished = setTimeout(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker('cont');
+    }, 250);
+  });
+} // Greeting component
+
 
 var Greeting = function Greeting() {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "GREETINGS, GUEST!"));
-};
+}; // render greeting component to header
 
-render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Greeting, null), document.getElementById('greeting-text'));
+
+if (document.getElementById('greeting-text')) {
+  render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Greeting, null), document.getElementById('greeting-text'));
+} // Create Swiper Slideshow
+// $(".woocommerce-product-gallery__image").wrap('<div class="swiper-slide"></div>');
+// $(".woocommerce-product-gallery").wrap('<div class="swiper-container"></div>');
+// $(".woocommerce-product-gallery__wrapper").wrap('<div class="swiper-wrapper"></div>');
+
+
+jquery__WEBPACK_IMPORTED_MODULE_2___default()('.wp-post-image').on('click', function (e) {
+  e.preventDefault();
+});
+var swiper = new Swiper('swiper-container');
 
 /***/ }),
 

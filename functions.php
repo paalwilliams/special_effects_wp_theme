@@ -129,4 +129,4 @@ function my_enqueue_theme_js() {
   );
 }
 
-require_once(__DIR__ . '/site_assets/sfx.php');
+require_once(__DIR__ . '/src/sfx.php');

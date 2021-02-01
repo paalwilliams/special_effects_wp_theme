@@ -31,7 +31,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 		<?php while ( have_posts() ) : ?>
-			<h1 class="product-title"><? echo the_title() ?></h1>
+			<h1 class="product-title"><?php echo the_title() ?></h1>
 		<?php
 
 			$_product = wc_get_product( get_the_ID() );

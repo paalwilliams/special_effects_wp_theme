@@ -13,7 +13,8 @@
     "start": "wp-scripts start",
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js",
-    "sass": "sass --watch ./site_assets/sass/main.scss style.css --style compressed"
+    "sass": "gulp sass:watch",
+    "gulp": "gulp sass"
   },
   "repository": {
     "type": "git",
@@ -29,8 +30,14 @@
     "@wordpress/scripts": "^13.0.0"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "jquery": "^3.5.1",
-    "sass": "^1.32.5"
-  }
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "jquery": "^3.5.1"
+  },
+  "browserslist": [
+    "> 0.1%",
+    "last 2 versions"
+  ]
 }

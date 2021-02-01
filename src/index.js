@@ -11,19 +11,8 @@ const UserLocalDateTime = () => {
     let week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-// Append st/nd/rd/th to day of month
 
-    // const nth = function(d) {
-    //     if (d > 3 && d < 21) return 'th';
-    //     switch (d % 10) {
-    //       case 1:  return "st";
-    //       case 2:  return "nd";
-    //       case 3:  return "rd";
-    //       default: return "th";
-    //     }
-    //   }
-
-      const dateString = `Today is ${months[m]} ${d}, ${y}`.toUpperCase();
+    const dateString = `Today is ${months[m]} ${d}, ${y}`.toUpperCase();
 
     return (
         <Fragment>
@@ -32,26 +21,40 @@ const UserLocalDateTime = () => {
     )
 }
 
-$('#webTicker').webTicker({
-        height:'75px', 
-        duplicate: true, 
-        rssfrequency: 0, 
-        startEmpty: false, 
-        hoverpause: false, 
-        speed: 20,
-        height: '50px'
+// render userlocaldatetime component to header
+if(document.getElementById('current-date')) {
+    render(<UserLocalDateTime />, document.getElementById('current-date'))
+}
+// create webticker instance on page load
+if(document.getElementById('ticker')){
+    $('#webTicker').webTicker({
+            height:'75px', 
+            duplicate: true, 
+            rssfrequency: 0, 
+            startEmpty: false, 
+            hoverpause: false, 
+            speed: 20,
+            height: '50px'
     })
-
-$(window).resize(() => {
-    $('#webTicker').webTicker('stop')
-    clearTimeout(window.resizedFinished);
-    window.resizedFinished = setTimeout(function(){
-        $('#webTicker').webTicker('cont')
-    }, 250);
-});
+}
 
 
-render(<UserLocalDateTime />, document.getElementById('current-date'))
+//watch for window resize
+
+if(document.getElementById('ticker')){
+
+    $(window).resize(() => {
+        $('#webTicker').webTicker('stop')
+        clearTimeout(window.resizedFinished);
+        window.resizedFinished = setTimeout(function(){
+            $('#webTicker').webTicker('cont')
+        }, 250);
+    });
+}
+
+
+
+// Greeting component
 
 const Greeting = () => {
     return (
@@ -61,4 +64,18 @@ const Greeting = () => {
     )
 }
 
-render(<Greeting />, document.getElementById('greeting-text'))
+// render greeting component to header
+
+if(document.getElementById('greeting-text')) {
+    render(<Greeting />, document.getElementById('greeting-text'));
+}
+
+// Create Swiper Slideshow
+// $(".woocommerce-product-gallery__image").wrap('<div class="swiper-slide"></div>');
+// $(".woocommerce-product-gallery").wrap('<div class="swiper-container"></div>');
+// $(".woocommerce-product-gallery__wrapper").wrap('<div class="swiper-wrapper"></div>');
+$('.wp-post-image').on('click', (e) => {
+    e.preventDefault();
+})
+
+const swiper = new Swiper('swiper-container')

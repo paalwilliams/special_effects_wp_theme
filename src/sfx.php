@@ -10,6 +10,16 @@ function enqueue_ticker_js() {
   wp_enqueue_script('ticker_js_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/webticker.min.js' );
 }
 
+// Impport webticker jQuery dependency
+add_action('wp_enqueue_scripts', 'enqueue_swiper_dependencies');
+
+function enqueue_swiper_dependencies() {
+  wp_enqueue_script('swiper_js_full', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.js' );
+  wp_enqueue_script('swiper_js_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.min.js' );
+  wp_enqueue_style('swiper_css_full', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.css' );
+  wp_enqueue_style('swiper_css_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.min.css' );
+}
+
 // wrap product info on archive page with custom div
 add_action('woocommerce_after_shop_loop_item_title', 'add_prod_info_wrap_div_start');
 
@@ -49,5 +59,6 @@ register_nav_menus( array( 'shop' => esc_html__( 'Main Menu', 'blankslate' ) ) )
 require_once(__DIR__ . '/sfx_customizer.php');
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 10 );
 
 ?>
