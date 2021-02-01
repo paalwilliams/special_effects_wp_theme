@@ -48,4 +48,6 @@ register_nav_menus( array( 'shop' => esc_html__( 'Main Menu', 'blankslate' ) ) )
 // Include Customizer Mods
 require_once(__DIR__ . '/sfx_customizer.php');
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
 ?>

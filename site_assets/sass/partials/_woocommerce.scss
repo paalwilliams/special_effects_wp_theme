@@ -24,12 +24,10 @@ div#primary {
     }
     
     div.prod-info-wrap h2 {
-        font-size: 2rem !important;
         text-align: center;
     }
     
     div.prod-info-wrap a {
-        font-size: 1.6rem;
         text-align: center;
         display: flex;
         justify-content: space-between;
@@ -37,12 +35,46 @@ div#primary {
     }
     
     h2.woocommerce-loop-product__title {
-        font-size: 2rem !important;
         text-align: center;
         font-family: 'Editorial New Ultralight';
+    }
+
+    main#main h1.product-title {
+        text-align: center;
+    }
+
+    main#main .soldout {
+        font-family: 'Suisse';
+        padding: 10px;
+        padding-bottom: 40px;
+        text-transform: uppercase;
     }
 }
 
 
+.woocommerce {
 
+    .button.button.alt {
+        background-color: transparent;
+        font-family: 'Editorial New Ultralight';
 
+        &:hover {
+                background-color: transparent;
+        }
+    }
+
+    div.product {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    div.product div.images.woocommerce-product-gallery {
+        margin: 0 auto;
+    }
+
+    div.product div.images .woocommerce-product-gallery__wrapper:first-child a img:first-of-type{
+        border: $border_width solid white;
+    }
+
+}

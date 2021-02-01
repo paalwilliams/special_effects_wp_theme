@@ -61,6 +61,10 @@ header#header {
     padding-top: 10px;
   }
 
+  div#bottom-header-wrapper nav#menu div ul li a {
+    font-family: "Editorial New Ultralight";
+  }
+
   &.main-header div#bottom-header-wrapper {
     border-top: $border_width solid white;
     border-bottom: $border_width solid white;
