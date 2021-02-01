@@ -1,17 +1,20 @@
+// CSS Reset
 @import './partials/reset.scss';
 
+// Fonts
 @import './partials/fonts.scss';
 
+// Global Styles
 @import './partials/global.scss';
 
+// Variables
+@import './partials/variables.scss';
 
 // Woocommerce
 @import './partials/woocommerce.scss';
-
 
 // Header
 @import './partials/header.scss';
 
 // Mobile styles at 1080px;
-
 @import './partials/mobile_1080.scss';

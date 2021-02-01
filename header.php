@@ -7,7 +7,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-<header id="header">
+<header id="header" class="main-header">
 <div id="branding">
 <div id="site-title">
 </div>

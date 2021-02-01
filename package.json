@@ -29,6 +29,7 @@
     "@wordpress/scripts": "^13.0.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "jquery": "^3.5.1",
     "sass": "^1.32.5"
   }

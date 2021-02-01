@@ -1,7 +1,6 @@
 const { render, useState, Fragment } = wp.element;
 import $ from 'jquery';
 
-
 const UserLocalDateTime = () => {
     const today = new Date();
     let d = today.getDate();

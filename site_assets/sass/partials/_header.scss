@@ -46,20 +46,24 @@ header#header {
     padding: 0 50px;
   }
 
-  div#bottom-header-wrapper nav#menu div.menu-main-menu-container ul {
+  &.shop-header div#bottom-header-wrapper nav#menu {
+    justify-content: flex-end;
+  }
+
+  div#bottom-header-wrapper nav#menu div ul {
     display: flex;
   }
 
-  div#bottom-header-wrapper nav#menu div.menu-main-menu-container ul li {
-    border: 2px solid white;
+  div#bottom-header-wrapper nav#menu div ul li {
+    border: $border_width solid white;
     padding: 5px;
     margin: 10px;
     padding-top: 10px;
   }
 
-  div#bottom-header-wrapper {
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
+  &.main-header div#bottom-header-wrapper {
+    border-top: $border_width solid white;
+    border-bottom: $border_width solid white;
   }
 
   div#bottom-header-wrapper > * {
@@ -94,5 +98,8 @@ header#header {
     font-size: 1.6rem;
   }
 
+  div#shop-header-img img {
+    height: 50px;
+  }
 
 }
