@@ -28,3 +28,53 @@ h5 {
 h6 {
     font-size: 1rem;
 }
+
+
+// Wordpress Contact form 7 styles
+
+form.wpcf7-form {
+	max-width: 85%;
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+    flex-direction: column;
+        
+
+    input, textarea {
+        border: 2px solid white;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        font-family: 'Editorial New';
+        font-size: 1.3rem;
+    }
+
+    input {
+        height: 60px;
+        margin: 10px 0;
+        font-size: 1.3rem;
+        padding-left: 10px;
+    }
+
+    textarea {
+        resize: none;
+        padding-left: 10px;
+        padding-top: 15px;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        padding: 2px 20px;
+        height: auto;
+    }
+}
+
+
+p.stock {
+	display: none;
+}
+
+.suisse {
+	font-family: 'Suisse'
+}

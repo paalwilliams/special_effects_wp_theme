@@ -71,11 +71,26 @@ if(document.getElementById('greeting-text')) {
 }
 
 // Create Swiper Slideshow
-// $(".woocommerce-product-gallery__image").wrap('<div class="swiper-slide"></div>');
-// $(".woocommerce-product-gallery").wrap('<div class="swiper-container"></div>');
-// $(".woocommerce-product-gallery__wrapper").wrap('<div class="swiper-wrapper"></div>');
+let images = $('.woocommerce-product-gallery__wrapper').children();
+$(".woocommerce-product-gallery__wrapper").remove();
+$('.woocommerce-product-gallery').append('<div class="swiper-wrapper"></div>')
+for(let img of images) {
+    $(img).children().children().addClass('wp-post-image')
+    $('.swiper-wrapper').append(img);
+}
+$('.woocommerce-product-gallery__image').wrap('<div class="swiper-slide"></div>')
+$(".swiper-wrapper").wrap('<div class="swiper-container"></div>');
 $('.wp-post-image').on('click', (e) => {
     e.preventDefault();
 })
 
-const swiper = new Swiper('swiper-container')
+$(".swiper-container").append('<div id="swiper-controls"><div class="swiper-prev"></div><div class="swiper-next"></div></div>');
+
+var swiper = new Swiper('.swiper-container', {
+    speed: 0,
+    navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
+    loop: 'true'
+  });

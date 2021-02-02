@@ -61,4 +61,11 @@ require_once(__DIR__ . '/sfx_customizer.php');
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 10 );
 
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
+  return array(
+      'width' => 600,
+      'height' => 750,
+      'crop' => 0,
+  );
+} );
 ?>
