@@ -78,4 +78,46 @@ div#primary {
         border: $border_width solid white;
     }
 
+
+    div.swiper-container {
+
+        div#swiper-controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 0;
+        }
+        
+        div#swiper-controls * {
+            border: 1px solid white;
+            padding: 10px;
+        }
+        h1.product-title {
+            padding: 25px;
+        }
+        
+        div.swiper-next {
+            background-image: url('/wp-content/uploads/2021/01/arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 50px;
+            width: 18%;
+        }
+        
+        
+        div.swiper-prev {
+            background-image: url('http://localhost:8000/wp-content/uploads/2021/01/arrow-e1612247248794.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 50px;
+            width: 18%;
+        }
+        
+        
+        div.swiper-prev:hover, div.swiper-next:hover {
+            cursor: pointer;
+        }
+    }
+
 }

@@ -14,9 +14,7 @@ function enqueue_ticker_js() {
 add_action('wp_enqueue_scripts', 'enqueue_swiper_dependencies');
 
 function enqueue_swiper_dependencies() {
-  wp_enqueue_script('swiper_js_full', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.js' );
   wp_enqueue_script('swiper_js_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.min.js' );
-  wp_enqueue_style('swiper_css_full', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.css' );
   wp_enqueue_style('swiper_css_min', get_stylesheet_directory_uri() . '/site_assets/js/dependencies/swiper-bundle.min.css' );
 }
 
@@ -68,4 +66,20 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
       'crop' => 0,
   );
 } );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+function woocommerce_template_single_excerpt() {
+    return;
+}
+
+function remove_short_description() {
+ 
+  remove_meta_box( 'postexcerpt', 'product', 'normal');
+   
+  }
+  add_action('add_meta_boxes', 'remove_short_description', 999);
+
 ?>
