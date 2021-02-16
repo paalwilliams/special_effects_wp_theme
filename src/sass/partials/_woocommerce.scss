@@ -2,10 +2,11 @@
 div#primary {
 	width: 80%;
     margin: 0 auto;
+    max-width: 1200px;
 
-        /* Product Archive Page */
-        ul.products li.product img {
-            border: $border_width solid white;
+    /* Product Archive Page */
+    ul.products li.product img {
+        border: $border_width solid white;
     }
     
     div.prod-info-wrap {
@@ -76,6 +77,104 @@ div#primary {
 
     div.product div.images .woocommerce-product-gallery__wrapper:first-child a img:first-of-type{
         border: $border_width solid white;
+    }
+
+        /* Remove Woocommerce Additional Product information tabs */
+    ul.tabs.wc-tabs {
+        display: none;
+    }
+
+    /* Style Woocommerce Product summary */
+
+    div.product div.summary.entry-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+            margin-bottom: 0;
+        border-top: 1px solid white;
+        padding: 10px 0;
+    }
+
+    /* Style Product Information  */
+
+    div#tab-description {
+        display: flex;
+        justify-content: space-evenly;
+        border-top: 1px solid white;
+    }
+
+    div#tab-description > * {
+        width: 50%;
+        padding: 20px;
+    }
+
+    div#description-left{ 
+        border-right: 1px solid white;
+    }
+
+    div#description-left * {
+        font-family: 'Suisse';
+        line-height: 1.2;
+    }
+
+    .woocommerce-page div.product div.summary {
+        width: 100%;
+        float: none;
+    }
+
+    div.product form.cart {
+        margin-bottom: 0;
+    }
+
+
+    /* Woocommerce Variable Product Styling */
+    form.variations_form.cart {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.single_variation_wrap {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    a.reset_variations {
+        display: none !important;
+    }
+
+    div.product form.cart .variations select {
+        width: 100%;
+    }
+
+    /* Woocommerce Disabled Button Styling */
+    button.button.alt.disabled {
+        background-color: transparent;
+    }
+
+    button.button.alt.disabled:hover {
+        background-color: transparent;
+    }
+
+    /* Product Gallery Border */
+    img.wp-post-image {
+        border: 1px solid white;
+    }
+
+    /* Cart Styles  */
+
+    table.shop_table {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+        float: none;
+        width: 80%;
+        max-width: 1200px;
+        margin: 20px auto;
     }
 
 

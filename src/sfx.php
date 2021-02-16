@@ -81,5 +81,10 @@ function remove_short_description() {
    
   }
   add_action('add_meta_boxes', 'remove_short_description', 999);
+  
+  /**
+ * Remove related products output
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 ?>
