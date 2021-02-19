@@ -86,32 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty;
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -121,13 +95,8 @@ module.exports = _defineProperty;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "jquery");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
@@ -138,64 +107,63 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var _wp$element = wp.element,
     render = _wp$element.render,
-    useState = _wp$element.useState,
-    Fragment = _wp$element.Fragment;
+    Fragment = _wp$element.Fragment,
+    React = _wp$element.React;
 
+var $ = __webpack_require__(/*! jquery */ "jquery");
 
 var UserLocalDateTime = function UserLocalDateTime() {
   var today = new Date();
   var d = today.getDate();
-  var dw = today.getDay();
   var m = today.getMonth();
   var y = today.getFullYear();
-  var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var dateString = "Today is ".concat(months[m], " ").concat(d, ", ").concat(y).toUpperCase();
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, dateString));
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, dateString));
 }; // render userlocaldatetime component to header
 
 
-if (document.getElementById('current-date')) {
-  render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(UserLocalDateTime, null), document.getElementById('current-date'));
+if (document.getElementById("current-date")) {
+  render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(UserLocalDateTime, null), document.getElementById("current-date"));
 } // create webticker instance on page load
 
 
-if (document.getElementById('ticker')) {
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({
-    height: '75px',
+if (document.getElementById("ticker")) {
+  $("#webTicker").webTicker({
     duplicate: true,
     rssfrequency: 0,
     startEmpty: false,
     hoverpause: false,
-    speed: 20
-  }, "height", '50px'));
+    speed: 20,
+    height: "50px"
+  });
 } //watch for window resize
 
 
-if (document.getElementById('ticker')) {
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).resize(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker('stop');
+if (document.getElementById("ticker")) {
+  $(window).resize(function () {
+    $("#webTicker").webTicker("stop");
     clearTimeout(window.resizedFinished);
     window.resizedFinished = setTimeout(function () {
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()('#webTicker').webTicker('cont');
+      $("#webTicker").webTicker("cont");
     }, 250);
   });
 } // Greeting component
 
 
 var Greeting = function Greeting() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", null, "GREETINGS, GUEST!"));
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "GREETINGS, GUEST!"));
 }; // render greeting component to header
 
 
-if (document.getElementById('greeting-text')) {
-  render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Greeting, null), document.getElementById('greeting-text'));
+if (document.getElementById("greeting-text")) {
+  render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Greeting, null), document.getElementById("greeting-text"));
 } // Create Swiper Slideshow
 
 
-var images = jquery__WEBPACK_IMPORTED_MODULE_2___default()('.woocommerce-product-gallery__wrapper').children();
-jquery__WEBPACK_IMPORTED_MODULE_2___default()(".woocommerce-product-gallery__wrapper").remove();
-jquery__WEBPACK_IMPORTED_MODULE_2___default()('.woocommerce-product-gallery').append('<div class="swiper-wrapper"></div>');
+var images = $(".woocommerce-product-gallery__wrapper").children();
+$(".woocommerce-product-gallery__wrapper").remove();
+$(".woocommerce-product-gallery").append("<div class=\"swiper-wrapper\"></div>");
 
 var _iterator = _createForOfIteratorHelper(images),
     _step;
@@ -203,8 +171,8 @@ var _iterator = _createForOfIteratorHelper(images),
 try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     var img = _step.value;
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()(img).children().children().addClass('wp-post-image');
-    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.swiper-wrapper').append(img);
+    $(img).children().children().addClass("wp-post-image");
+    $(".swiper-wrapper").append(img);
   }
 } catch (err) {
   _iterator.e(err);
@@ -212,19 +180,19 @@ try {
   _iterator.f();
 }
 
-jquery__WEBPACK_IMPORTED_MODULE_2___default()('.woocommerce-product-gallery__image').wrap('<div class="swiper-slide"></div>');
-jquery__WEBPACK_IMPORTED_MODULE_2___default()(".swiper-wrapper").wrap('<div class="swiper-container"></div>');
-jquery__WEBPACK_IMPORTED_MODULE_2___default()('.wp-post-image').on('click', function (e) {
+$(".woocommerce-product-gallery__image").wrap("<div class=\"swiper-slide\"></div>");
+$(".swiper-wrapper").wrap("<div class=\"swiper-container\"></div>");
+$(".wp-post-image").on("click", function (e) {
   e.preventDefault();
 });
-jquery__WEBPACK_IMPORTED_MODULE_2___default()(".swiper-container").append('<div id="swiper-controls"><div class="swiper-prev"></div><div class="swiper-next"></div></div>');
-var swiper = new Swiper('.swiper-container', {
+$(".swiper-container").append("<div id=\"swiper-controls\"><div class=\"swiper-prev\"></div><div class=\"swiper-next\"></div></div>");
+new Swiper(".swiper-container", {
   speed: 0,
   navigation: {
-    nextEl: '.swiper-next',
-    prevEl: '.swiper-prev'
+    nextEl: ".swiper-next",
+    prevEl: ".swiper-prev"
   },
-  loop: 'true'
+  loop: "true"
 });
 
 /***/ }),

@@ -63,21 +63,62 @@ div#primary {
         &:hover {
                 background-color: transparent;
         }
+
+        &.disabled {
+
+            background-color: transparent;
+                
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    
+
+    /* Woocommerce Disabled Button Styling */
+    
+
+    .button.alt.checkout-button, .woocommerce button.button {
+        border: 1px solid white;
+        width: 250px;
+        font-family: 'Suisse';
+        text-transform: uppercase;
+        padding: 5px 0;
+        border-radius: 0;
+        background-color: transparent;
+        color: white;
+    }
+    
+    button.button:disabled, .woocommerce button.button:disabled[disabled] {
+        color: white !important;
+        font-size: 1.25em;
+        padding: 5px;
+        width: auto;
+    }
+    
+    button.button {
+        color: white !important;
+        font-size: 1.25em;
+        padding: 5px;
+        width: auto;
     }
 
     div.product {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        div.images.woocommerce-product-gallery {
+            margin: 0 auto;
+        }
+    
+        div.images .woocommerce-product-gallery__wrapper:first-child a img:first-of-type{
+            border: $border_width solid white;
+        }
     }
     
-    div.product div.images.woocommerce-product-gallery {
-        margin: 0 auto;
-    }
 
-    div.product div.images .woocommerce-product-gallery__wrapper:first-child a img:first-of-type{
-        border: $border_width solid white;
-    }
 
         /* Remove Woocommerce Additional Product information tabs */
     ul.tabs.wc-tabs {
@@ -148,14 +189,6 @@ div#primary {
         width: 100%;
     }
 
-    /* Woocommerce Disabled Button Styling */
-    button.button.alt.disabled {
-        background-color: transparent;
-    }
-
-    button.button.alt.disabled:hover {
-        background-color: transparent;
-    }
 
     /* Product Gallery Border */
     img.wp-post-image {
@@ -218,5 +251,35 @@ div#primary {
             cursor: pointer;
         }
     }
+
+
+    // Cart Styles
+
+    table.shop_table *{
+
+        border-radius: 0;
+        text-decoration: none;
+    }
+    table.shop_table th {
+        font-family: 'Suisse';
+        text-transform: uppercase;
+    }
+    
+    table.shop_table thead tr th{
+        border-top: 1px solid white;
+        border-bottom: 1px solid white
+    }
+    
+    .quantity .qty {
+        background-color: transparent;
+        border: 0;
+        color: white;
+    }
+    
+
+    table.shop_table tr.cart-subtotal {
+        border: 1px solid white;
+    }
+    
 
 }

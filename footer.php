@@ -1,8 +1,13 @@
 </div>
 <footer id="footer">
 <div id="copyright">
-&copy; <?php echo esc_html( date_i18n( __( 'Y', 'blankslate' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 </div>
+<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
+	<div id="footer-widget" class="primary-sidebar widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+	</div>
+<?php endif; ?>
+
 </footer>
 </div>
 <?php wp_footer(); ?>

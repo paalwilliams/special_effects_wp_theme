@@ -13,8 +13,13 @@
         &.main-header div#bottom-header-wrapper {
             justify-content: center;
         }
-
-
     }
 
+    .woocommerce {
+
+        ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
+		    width: 100%;
+		    float: none
+	    }
+    }
 }

@@ -2,7 +2,7 @@
   "name": "special_effects",
   "version": "1.0.0",
   "description": "=== BlankSlate ===",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "scripts": {
     "build": "wp-scripts build",
     "check-engines": "wp-scripts check-engines",
@@ -27,7 +27,13 @@
   },
   "homepage": "https://github.com/paalwilliams/special_effects_wp_theme#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^13.0.0"
+    "@wordpress/scripts": "^13.0.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
   },
   "dependencies": {
     "gulp": "^4.0.2",
